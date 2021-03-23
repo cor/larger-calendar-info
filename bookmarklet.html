@@ -1,16 +1,25 @@
-<a id="bookmarklet" href="javascript:alert('hi');">Larger Calendar</a>
-
+<a id="bookmarklet">Larger Calendar</a>
 
 <script>
+    // Bookmarklet for increasing the "Calendar event info" section in Google Calendar
     // minified with https://javascript-minifier.com
-    var query = "Afspraakdetails en een tijd vinden";
-    let element = document.evaluate('//*[text()="' + query + '"]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0);
-    let target = element.parentElement;
-    target.style.flex = ".2 0 1400px" // Change width of calendar info section
-
-    // what text code should be wrapped in in order to get the bookmarklet to work:
-    // javascript:{ };void(0); 
-
-    // resulting bookmark:
+    //
+    //
+    // var query = "Afspraakdetails en een tijd vinden";
+    // let element = document.evaluate('//*[text()="' + query + '"]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0);
+    // let target = element.parentElement;
+    // target.style.flex = ".2 0 1400px" // Change width of calendar info section
+    //
+    //
+    // wrapped in the following:
+    // javascript:{ /* code here */ };void(0); 
+    //
+    //
+    // gives the following bookmark
     // javascript:{var query="Afspraakdetails en een tijd vinden";let element=document.evaluate('//*[text()="'+query+'"]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0),target=element.parentElement;target.style.flex=".2 0 1400px";};void(0);
+
+    const bookmarkScript = `javascript:{var query="Afspraakdetails en een tijd vinden";let element=document.evaluate('//*[text()="'+query+'"]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0),target=element.parentElement;target.style.flex=".2 0 1400px";};void(0);`;
+
+    const bookmarklet = document.getElementById('bookmarklet')
+    bookmarklet.href = bookmarkScript;
 </script>
