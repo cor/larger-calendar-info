@@ -2,17 +2,15 @@
 
 
 <script>
+    // minified with https://javascript-minifier.com
     var query = "Afspraakdetails en een tijd vinden";
     let element = document.evaluate('//*[text()="' + query + '"]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0);
     let target = element.parentElement;
-    target.style.flex = ".2 0 1000px" // Change width of calendar info
-    // javascript:{ };void(0);
+    target.style.flex = ".2 0 1400px" // Change width of calendar info section
 
-    // javascript:{var query="Afspraakdetails en een tijd vinden";alert(query);let element=document.evaluate('//*[text()="'+query+'"]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0),target=element.parentElement;target.style.flex=".2 0 940px",alert("done");};void(0);
+    // what text code should be wrapped in in order to get the bookmarklet to work:
+    // javascript:{ };void(0); 
 
-
-    // javascript:{var query="Afspraakdetails en een tijd vinden";alert(query);let element=document.evaluate('//*[text()="'+query+'"]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0);console.log(element.classList),alert("done");};void(0);
-
-    // flex: .2 0 940px;
-
+    // resulting bookmark:
+    // javascript:{var query="Afspraakdetails en een tijd vinden";let element=document.evaluate('//*[text()="'+query+'"]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE).snapshotItem(0),target=element.parentElement;target.style.flex=".2 0 1400px";};void(0);
 </script>
